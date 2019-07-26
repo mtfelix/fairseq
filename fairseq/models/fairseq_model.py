@@ -204,7 +204,7 @@ class BaseFairseqModel(nn.Module):
     def hub_models(cls):
         return {}
 
-
+### mtfelix: 最基本的fairseq端到端总模型 
 class FairseqEncoderDecoderModel(BaseFairseqModel):
     """Base class for encoder-decoder models.
 
