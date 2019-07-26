@@ -204,7 +204,7 @@ class BaseFairseqModel(nn.Module):
     def hub_models(cls):
         return {}
 
-### mtfelix: 最基本的fairseq端到端总模型 
+### mtfelix 2019.7.26: 最基本的fairseq端到端总模型 
 class FairseqEncoderDecoderModel(BaseFairseqModel):
     """Base class for encoder-decoder models.
 
@@ -220,7 +220,7 @@ class FairseqEncoderDecoderModel(BaseFairseqModel):
         self.decoder = decoder
         assert isinstance(self.encoder, FairseqEncoder)
         assert isinstance(self.decoder, FairseqDecoder)
-
+    ### mtfelix 2019.7.26: 这里是forward的实现。另，在pytorch里面，是不是不用写backward/BP这个，因为一般用autograd就行？
     def forward(self, src_tokens, src_lengths, prev_output_tokens, **kwargs):
         """
         Run the forward pass for an encoder-decoder model.
